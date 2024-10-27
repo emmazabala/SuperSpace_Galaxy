@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class MaxMovement : MonoBehaviour
 {
     public float Speed;
@@ -9,7 +11,7 @@ public class MaxMovement : MonoBehaviour
     public Rigidbody2D Rbd;
     private SpriteRenderer _MaxSR;
     private float _Horizontal;
-    private bool _InGround;
+    
     void Start()
     {
          Rbd = GetComponent<Rigidbody2D>();
@@ -18,20 +20,20 @@ public class MaxMovement : MonoBehaviour
 
    private void Update()
     {
+       
         
 
-        
-        if(Input.GetKeyDown(KeyCode.W) && _InGround == true)
+      /*  if(Input.GetKeyDown(KeyCode.W) && _InGround == true)
         {
             Jump();
             _InGround = false;
-        }
+        }*/
     }
 
-    private void Move ()
+    private void Move()
     {
         _Horizontal = Input.GetAxisRaw("Horizontal");
-        Rbd.velocity = new Vector2(_Horizontal * Speed, Rbd.velocity.y);
+        Rbd.velocity = _Horizontal * Speed * Vector2.right;
         if(_Horizontal > 0)
         {
             _MaxSR.flipX = false;
@@ -42,34 +44,14 @@ public class MaxMovement : MonoBehaviour
         }
     }
 
-    private void Jump()
+    /*private void Jump()
     {
         Rbd.AddForce(Vector2.up * JumpForce);
+    }*/
+
+    
     }
-
-    public void OnCollisionEnter2D(Collision2D ground)
-    {
-        Debug.Log("toque algo");
-        
-        if(ground.gameObject.tag == "Suelo")
-        {
-            Debug.Log("toque suelo");
-            _InGround = true;
-        }
-        else
-        {
-            _InGround = false;
-        }
-    }
-
-    private void GravityChange()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-
-        }
-
-
-    }
+    
+    
                     
 }
