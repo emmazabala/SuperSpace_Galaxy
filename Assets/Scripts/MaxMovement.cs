@@ -6,29 +6,55 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class MaxMovement : MonoBehaviour
 {
-    public float Speed;
+    public float Speed = 2;
     public float JumpForce; 
     public Rigidbody2D Rbd;
-    private SpriteRenderer _MaxSR;
+    public SpriteRenderer _MaxSR;
     private float _Horizontal;
-    
+    public LayerMask groundLayer;
+    public LayerMask ceilLayer;
+    public Vector2 boxSize;
+    public float castDistance = 0.18f;
+    private bool _InGround;
+    private bool _InCeil;
     void Start()
     {
          Rbd = GetComponent<Rigidbody2D>();
         _MaxSR = GetComponent<SpriteRenderer>();
+        Rbd.gravityScale = 10;
+        Speed = 2;
     }
 
    private void Update()
     {
-       
         
-
-      /*  if(Input.GetKeyDown(KeyCode.W) && _InGround == true)
+        if (Physics2D.Raycast(transform.position, Vector2.down, castDistance, groundLayer))
         {
-            Jump();
+            Debug.Log("toque suelo");
+            _InGround = true;
+        }
+         else if (Physics2D.Raycast(transform.position, Vector2.up, castDistance, ceilLayer))
+        {
+            Debug.Log("toque techo");
+            _InCeil = true;
+        }
+        else 
+        {
+            Debug.Log("volando");
             _InGround = false;
-        }*/
+            _InCeil = false;    
+        }
+        GravityChange();
+        Move();
+
+        /*  if(Input.GetKeyDown(KeyCode.W) && _InGround == true)
+          {
+              Jump();
+              _InGround = false;
+          }*/
     }
+
+    
 
     private void Move()
     {
@@ -44,14 +70,42 @@ public class MaxMovement : MonoBehaviour
         }
     }
 
+    private void GravityChange()
+    {
+        if (_InGround == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Rbd.gravityScale *= -1;
+                _MaxSR.flipY = !_MaxSR.flipY;
+            }
+
+        }
+        else if (_InCeil == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Rbd.gravityScale *= -1;
+                _MaxSR.flipY = !_MaxSR.flipY;
+            }
+        }
+        else
+        {
+            _InGround = false;
+            _InCeil = false;
+            return;
+        }
+
+    }
+
     /*private void Jump()
     {
         Rbd.AddForce(Vector2.up * JumpForce);
     }*/
 
-    
-    }
+
+}
     
     
                     
-}
+
