@@ -10,6 +10,7 @@ public class MaxMovement : MonoBehaviour
     public float JumpForce; 
     public Rigidbody2D Rbd;
     public SpriteRenderer _MaxSR;
+    public Animator Animator;
     private float _Horizontal;
     public LayerMask groundLayer;
     public LayerMask ceilLayer;
@@ -17,10 +18,17 @@ public class MaxMovement : MonoBehaviour
     public float castDistance = 0.18f;
     private bool _InGround;
     private bool _InCeil;
+    private string ActualAnimation;
+    private bool _IsMoving = false;
+
+    const string idle = "Idle";
+    const string RunLeft = "RunLeft";
+    const string RunRigth = "RunRigth";
     void Start()
     {
          Rbd = GetComponent<Rigidbody2D>();
         _MaxSR = GetComponent<SpriteRenderer>();
+        Animator = GetComponent<Animator>();
         Rbd.gravityScale = 10;
         Speed = 2;
     }
@@ -30,19 +38,23 @@ public class MaxMovement : MonoBehaviour
         
         if (Physics2D.Raycast(transform.position, Vector2.down, castDistance, groundLayer))
         {
-            Debug.Log("toque suelo");
+           
             _InGround = true;
         }
          else if (Physics2D.Raycast(transform.position, Vector2.up, castDistance, ceilLayer))
         {
-            Debug.Log("toque techo");
+            
             _InCeil = true;
         }
         else 
         {
-            Debug.Log("volando");
+            
             _InGround = false;
             _InCeil = false;    
+        }
+        if (_IsMoving == false)
+        {
+            ChangeAnimationState(idle);
         }
         GravityChange();
         Move();
@@ -60,14 +72,35 @@ public class MaxMovement : MonoBehaviour
     {
         _Horizontal = Input.GetAxisRaw("Horizontal");
         Rbd.velocity = _Horizontal * Speed * Vector2.right;
-        if(_Horizontal > 0)
+        if(_Horizontal != 0)
         {
-            _MaxSR.flipX = false;
+            _IsMoving = true;
         }
-        else if(_Horizontal < 0)
+        else 
         {
-            _MaxSR.flipX = true;
+            _IsMoving = false;  
         }
+            if (_Horizontal > 0 && _IsMoving == false)
+            {
+             _MaxSR.flipX = false;
+            }
+            else if(_Horizontal < 0 && _IsMoving == false)
+            {
+                _MaxSR.flipX = true;
+            }
+            if(_Horizontal > 0 && _IsMoving == true)
+            {
+                
+                ChangeAnimationState(RunRigth);
+            }
+           
+            else if(_Horizontal < 0 && _IsMoving == true)
+            {
+                
+                ChangeAnimationState(RunLeft);
+            }
+            
+            
     }
 
     private void GravityChange()
@@ -76,6 +109,7 @@ public class MaxMovement : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                _IsMoving = true ;
                 Rbd.gravityScale *= -1;
                 _MaxSR.flipY = !_MaxSR.flipY;
             }
@@ -85,6 +119,7 @@ public class MaxMovement : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                _IsMoving = true;
                 Rbd.gravityScale *= -1;
                 _MaxSR.flipY = !_MaxSR.flipY;
             }
@@ -98,6 +133,13 @@ public class MaxMovement : MonoBehaviour
 
     }
 
+    void ChangeAnimationState(string newAnimation)
+    {
+        if(ActualAnimation == newAnimation)
+        { return; }
+        Animator.Play(newAnimation);
+        ActualAnimation = newAnimation;
+    }
     /*private void Jump()
     {
         Rbd.AddForce(Vector2.up * JumpForce);
