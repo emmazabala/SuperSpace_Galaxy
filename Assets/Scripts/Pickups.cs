@@ -5,23 +5,14 @@ using UnityEngine;
 
 public class Pickups : MonoBehaviour
 {
-    private int _ReplacementCount = 0;
-    public int ReplacementLimit = 9;
+    [SerializeField] private PickUpsCount _Counter;
 
-    private void Update()
-    {
-        if (_ReplacementCount == ReplacementLimit)
-        {
-            Debug.Log("Recogiste todos los pickup!!");
-        }
-        return;
-    }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            _ReplacementCount++;
-            Destroy(gameObject);
+        if(collision.CompareTag("Player"))
+        { 
+        _Counter.OnPickUp();
+        Destroy(gameObject);
         }
     }
 
