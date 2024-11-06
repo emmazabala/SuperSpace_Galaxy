@@ -36,22 +36,8 @@ public class MaxMovement : MonoBehaviour
    private void Update()
     {
         
-        if (Physics2D.Raycast(transform.position, Vector2.down, castDistance, groundLayer))
-        {
-           
-            _InGround = true;
-        }
-         else if (Physics2D.Raycast(transform.position, Vector2.up, castDistance, ceilLayer))
-        {
-            
-            _InCeil = true;
-        }
-        else 
-        {
-            
-            _InGround = false;
-            _InCeil = false;    
-        }
+        
+
         if (_IsMoving == false)
         {
             ChangeAnimationState(idle);
@@ -105,6 +91,25 @@ public class MaxMovement : MonoBehaviour
 
     private void GravityChange()
     {
+        if (Physics2D.Raycast(transform.position, Vector2.down, castDistance, groundLayer))
+        {
+           
+            _InGround = true;
+            
+        }
+       else if (Physics2D.Raycast(transform.position, Vector2.up, castDistance, ceilLayer))
+        {
+            
+            _InCeil = true;
+            
+        }
+        else
+        {
+            _InGround = false;
+            _InCeil = false;
+        }
+
+
         if (_InGround == true)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -126,8 +131,8 @@ public class MaxMovement : MonoBehaviour
         }
         else
         {
-            _InGround = false;
             _InCeil = false;
+            _InGround = false;
             return;
         }
 
@@ -147,7 +152,3 @@ public class MaxMovement : MonoBehaviour
 
 
 }
-    
-    
-                    
-
