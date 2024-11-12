@@ -6,15 +6,21 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     public Transform Transform;
-    private void OnTriggerEnter2D(Collider2D collision)
+    public int gravity ;
+    public bool flipY ;
+
+    [SerializeField] void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
         {
-            GameObject obj = GameObject.Find("Checkpoint");
+            GameObject obj = GameObject.Find("Checkpoint_");
             if (obj != null)
             {
+                obj.GetComponent<Checkpoint>().gravity = gravity;
+                obj.GetComponent<Checkpoint>().flipY = flipY;
                 obj.transform.position = Transform.position;
             }
         }
     }
 }
+

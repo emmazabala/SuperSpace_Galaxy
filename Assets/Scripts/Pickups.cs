@@ -12,7 +12,7 @@ public class Pickups : MonoBehaviour
         if(collision.CompareTag("Player"))
         { 
         _Counter.OnPickUp();
-        Destroy(gameObject);
+        gameObject.SetActive(false);
         }
     }
 

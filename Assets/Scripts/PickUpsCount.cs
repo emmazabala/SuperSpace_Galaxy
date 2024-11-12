@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class PickUpsCount : MonoBehaviour
 {
-    [SerializeField] private int _TotalPickUps;
+    private int _TotalPickUps;
     private int _PickUpsCount = 0;
-    
+    private void Start()
+    {
+       _TotalPickUps  = transform.parent.childCount - 1;
+        Debug.Log($"Total de pickups= " +  _TotalPickUps);
+        gameObject.SetActive(false);
+        gameObject.SetActive(true);
+        gameObject.SetActive(false);
+    }
     public void OnPickUp ()
     {
         Debug.Log("Tamo activo");
@@ -16,4 +23,5 @@ public class PickUpsCount : MonoBehaviour
             gameObject.SetActive(true);
         }
     }
+    
 }

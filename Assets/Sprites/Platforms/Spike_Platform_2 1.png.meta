@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a87c6396fcbd60d4aa90d6408f81542a
+guid: 83024b580c2abd74cbc5f7d1200abfb4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Temporal_Platform_0
+      name: Spike_Platform_2 1_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 53
         y: 0
-        width: 16
-        height: 16
+        width: 53
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,50 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a880803d52819f47ac3f03e4256546f
-      internalID: -683094639
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Temporal_Platform_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1686e8c1da8cc8241a1d4ec5fbb190fe
-      internalID: 1449013202
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Temporal_Platform_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c97ad1250d8b78a4396dcaa9bc6647ab
-      internalID: -1875450024
+      spriteID: f81285f001c81e1448cc309039f02872
+      internalID: -1758161660
       vertices: []
       indices: 
       edges: []
@@ -163,16 +121,14 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Temporal_Platform_0: -683094639
-      Temporal_Platform_1: 1449013202
-      Temporal_Platform_2: -1875450024
+      Spike_Platform_2 1_0: -1758161660
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
