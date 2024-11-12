@@ -11,8 +11,7 @@ public class PickUpsCount : MonoBehaviour
        _TotalPickUps  = transform.parent.childCount - 1;
         Debug.Log($"Total de pickups= " +  _TotalPickUps);
         gameObject.SetActive(false);
-        gameObject.SetActive(true);
-        gameObject.SetActive(false);
+       
     }
     public void OnPickUp ()
     {
