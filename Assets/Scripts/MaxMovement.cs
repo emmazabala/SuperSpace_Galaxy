@@ -9,6 +9,7 @@ public class MaxMovement : MonoBehaviour
     public Rigidbody2D Rbd;
     public SpriteRenderer _MaxSR;
     public Animator Animator;
+    public Transform PlayerTransform;
     private float _Horizontal;
     public LayerMask groundLayer;
     public Vector2 boxSize;
@@ -16,15 +17,22 @@ public class MaxMovement : MonoBehaviour
     private bool _InGround;
     private string ActualAnimation;
     private bool _IsMoving = false;
+    public Checkpoint Checkpoint;
+    public Transform _RespawnWaypoint;
+    
 
     const string idle = "Idle";
     const string RunLeft = "RunLeft";
     const string RunRigth = "RunRigth";
+
+    public PlayerDeadTriggered playerDeadTriggered;
+    public delegate void PlayerDeadTriggered();
     void Start()
     {
          Rbd = GetComponent<Rigidbody2D>();
         _MaxSR = GetComponent<SpriteRenderer>();
         Animator = GetComponent<Animator>();
+        PlayerTransform = GetComponent<Transform>();
         Rbd.gravityScale = 10;
         Speed = 2;
     }
@@ -120,4 +128,11 @@ public class MaxMovement : MonoBehaviour
         ActualAnimation = newAnimation;
     }
     
+    public void Kill()
+    {
+        Rbd.gravityScale = Checkpoint.gravity;
+        _MaxSR.flipY = Checkpoint.flipY;
+        PlayerTransform.position = _RespawnWaypoint.transform.position;
+        playerDeadTriggered?.Invoke();
+    }
 }

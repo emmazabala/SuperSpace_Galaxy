@@ -13,6 +13,7 @@ public class Checkpoint : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
+            Debug.Log("el chek trigger con player");
             GameObject obj = GameObject.Find("Checkpoint_");
             if (obj != null)
             {
