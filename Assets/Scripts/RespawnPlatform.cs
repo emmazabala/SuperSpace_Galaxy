@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
+public class RespawnPlatform : MonoBehaviour
 {
     public Transform posA, posB;
     public float speed;
@@ -71,9 +71,8 @@ public class MovingPlatform : MonoBehaviour
     {
         transform.position = posA.position;
         _hasToMove = false;
-        
         Debug.Log("me resetee");
-    }  
+    }
 
     private void OnDestroy()
     {

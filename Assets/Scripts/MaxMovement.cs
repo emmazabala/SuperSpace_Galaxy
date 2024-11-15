@@ -79,8 +79,6 @@ public class MaxMovement : MonoBehaviour
                 
                 ChangeAnimationState(RunLeft);
             }
-            
-            
     }
 
     private void GravityChange()
@@ -117,7 +115,6 @@ public class MaxMovement : MonoBehaviour
             _InGround = false;
             return;
         }
-
     }
 
     void ChangeAnimationState(string newAnimation)

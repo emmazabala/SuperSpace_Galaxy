@@ -11,12 +11,12 @@ public class Pickups : MonoBehaviour
     [Header("Optional")]
     public bool ReActivate = false;
     private MaxMovement max;
-    private MovingPlatform MovingPlatform;
+    private RespawnPlatform _RespawnPlatform;
 
     private void Start()
     {
         max = GameObject.FindObjectOfType<MaxMovement>();
-        MovingPlatform = GameObject.FindObjectOfType<MovingPlatform>();
+        _RespawnPlatform = GameObject.FindObjectOfType<RespawnPlatform>();
         if (max != null)
         {
             
@@ -44,7 +44,7 @@ public class Pickups : MonoBehaviour
 
     private void Activate()
     {
-      MovingPlatform.Reset_();
+      _RespawnPlatform.Reset_();
       gameObject.SetActive(true);
     }
 
