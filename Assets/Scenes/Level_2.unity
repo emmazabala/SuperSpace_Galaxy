@@ -70777,6 +70777,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8954948067487856560, guid: 18c06824845a5264c8ac9ec88be7474e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9023041591074262087, guid: 18c06824845a5264c8ac9ec88be7474e, type: 3}
       propertyPath: m_Name
       value: NewScene
