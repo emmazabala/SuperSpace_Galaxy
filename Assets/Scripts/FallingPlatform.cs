@@ -35,30 +35,17 @@ public class FallingPlatform : MonoBehaviour
     private IEnumerator StartFall()
     {
         falling = true;
-
         yield return new WaitForSeconds(fallDelay);
-
-        //rb.bodyType = RigidbodyType2D.Dynamic;
-
         transform.position = Vector2.MoveTowards(transform.position, fallPos, Speed);
         block.enabled = false;
         StartCoroutine(StartRegen());
-
-        //wait to hide 
-        //disable Renderer and collider
-        //move plataform
-        //Wait to spawn
     }
     private IEnumerator StartRegen()
     {
         StopCoroutine(StartFall());
         falling = false;
-
         yield return new WaitForSeconds(regenDelay);
-        //rb.bodyType = RigidbodyType2D.Kinematic;
         transform.position = initialPos;
         block.enabled = true;
-
-
     }
 }
