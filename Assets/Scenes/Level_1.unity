@@ -155,6 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Counter: {fileID: 973279555}
+  Countable: 1
+  ReActivate: 0
 --- !u!58 &36098279
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -339,6 +341,71 @@ Transform:
   - {fileID: 612562479}
   m_Father: {fileID: 1109043777}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &89563465
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8384660000369629560, guid: 18c06824845a5264c8ac9ec88be7474e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.717
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384660000369629560, guid: 18c06824845a5264c8ac9ec88be7474e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.138
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384660000369629560, guid: 18c06824845a5264c8ac9ec88be7474e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.4168444
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384660000369629560, guid: 18c06824845a5264c8ac9ec88be7474e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384660000369629560, guid: 18c06824845a5264c8ac9ec88be7474e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384660000369629560, guid: 18c06824845a5264c8ac9ec88be7474e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384660000369629560, guid: 18c06824845a5264c8ac9ec88be7474e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384660000369629560, guid: 18c06824845a5264c8ac9ec88be7474e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384660000369629560, guid: 18c06824845a5264c8ac9ec88be7474e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384660000369629560, guid: 18c06824845a5264c8ac9ec88be7474e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954948067487856560, guid: 18c06824845a5264c8ac9ec88be7474e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.60774136
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954948067487856560, guid: 18c06824845a5264c8ac9ec88be7474e, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.16474485
+      objectReference: {fileID: 0}
+    - target: {fileID: 9023041591074262087, guid: 18c06824845a5264c8ac9ec88be7474e, type: 3}
+      propertyPath: m_Name
+      value: LevelManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 18c06824845a5264c8ac9ec88be7474e, type: 3}
 --- !u!1 &100269626
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,6 +438,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Counter: {fileID: 973279555}
+  Countable: 1
+  ReActivate: 0
 --- !u!58 &100269628
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -607,6 +676,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Counter: {fileID: 973279555}
+  Countable: 1
+  ReActivate: 0
 --- !u!1 &238968278
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,6 +812,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Counter: {fileID: 973279555}
+  Countable: 1
+  ReActivate: 0
 --- !u!4 &289899969 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4081121330750065517, guid: c78f8fe403a721341bcb1a77fd0ab076, type: 3}
@@ -1521,10 +1594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285889a4004f8fb449de1d14aa08d91b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Waypoint: {fileID: 1187810256}
-  PlayerRigidbody: {fileID: 0}
-  PlayerSR: {fileID: 0}
-  Checkpoint: {fileID: 0}
 --- !u!66 &326528766
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -2357,6 +2426,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Counter: {fileID: 973279555}
+  Countable: 1
+  ReActivate: 0
 --- !u!1 &601652804
 GameObject:
   m_ObjectHideFlags: 0
@@ -5523,10 +5594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285889a4004f8fb449de1d14aa08d91b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Waypoint: {fileID: 1187810256}
-  PlayerRigidbody: {fileID: 1006652795}
-  PlayerSR: {fileID: 1006652796}
-  Checkpoint: {fileID: 1187810257}
 --- !u!1 &855466428
 GameObject:
   m_ObjectHideFlags: 0
@@ -23049,11 +23116,14 @@ MonoBehaviour:
   Rbd: {fileID: 1006652795}
   _MaxSR: {fileID: 1006652796}
   Animator: {fileID: 0}
+  PlayerTransform: {fileID: 1006652797}
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
   boxSize: {x: 1, y: 1}
   castDistance: 0.18
+  Checkpoint: {fileID: 1187810257}
+  _RespawnWaypoint: {fileID: 1187810256}
 --- !u!95 &1006652800
 Animator:
   serializedVersion: 5
@@ -23142,6 +23212,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Counter: {fileID: 973279555}
+  Countable: 1
+  ReActivate: 0
 --- !u!58 &1116014737
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -23518,6 +23590,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Counter: {fileID: 973279555}
+  Countable: 1
+  ReActivate: 0
 --- !u!1 &1267803658
 GameObject:
   m_ObjectHideFlags: 0
@@ -23714,6 +23788,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Counter: {fileID: 973279555}
+  Countable: 1
+  ReActivate: 0
 --- !u!1 &1367240333
 GameObject:
   m_ObjectHideFlags: 0
@@ -26063,6 +26139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Counter: {fileID: 973279555}
+  Countable: 1
+  ReActivate: 0
 --- !u!1 &1469852086
 GameObject:
   m_ObjectHideFlags: 0
@@ -26197,6 +26275,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Counter: {fileID: 973279555}
+  Countable: 1
+  ReActivate: 0
 --- !u!1 &1486303939
 GameObject:
   m_ObjectHideFlags: 0
@@ -27983,6 +28063,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Counter: {fileID: 973279555}
+  Countable: 1
+  ReActivate: 0
 --- !u!58 &2020409916
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -28117,6 +28199,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Counter: {fileID: 973279555}
+  Countable: 1
+  ReActivate: 0
 --- !u!58 &2024523764
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -28659,3 +28743,4 @@ SceneRoots:
   - {fileID: 935710262}
   - {fileID: 1986806875}
   - {fileID: 1109043777}
+  - {fileID: 89563465}
