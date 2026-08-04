@@ -9,7 +9,7 @@ public class Checkpoint : MonoBehaviour
     public int gravity ;
     public bool flipY ;
 
-    [SerializeField] void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
         {
