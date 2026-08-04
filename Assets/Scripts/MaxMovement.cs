@@ -51,7 +51,7 @@ public class MaxMovement : MonoBehaviour
     private void Move()
     {
         _Horizontal = Input.GetAxisRaw("Horizontal");
-        Rbd.velocity = _Horizontal * Speed * Vector2.right;
+        Rbd.linearVelocity = _Horizontal * Speed * Vector2.right;
         if(_Horizontal != 0)
         {
             _IsMoving = true;
